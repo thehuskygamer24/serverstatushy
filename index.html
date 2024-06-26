@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Hype Techz Website</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            border: 2px solid red;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+        .online {
+            background-color: green;
+        }
+        .offline {
+            background-color: red;
+        }
+        .server-status {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Hype Techz new server status</h1>
+    <p>
+        1. Palmtrees are amazing<br>
+        2. If the line is green, the server is online<br>
+        3. If the line is red, the server is offline or down
+    </p>
+    <div id="serverStatus" class="server-status online">Server is online</div>
+
+    <script>
+        // Boolean variable to control server status
+        var isServerOnline = true;
+
+        function updateServerStatus() {
+            var serverStatus = document.getElementById("serverStatus");
+            if (isServerOnline) {
+                serverStatus.classList.remove("offline");
+                serverStatus.classList.add("online");
+                serverStatus.textContent = "Server is online";
+            } else {
+                serverStatus.classList.remove("online");
+                serverStatus.classList.add("offline");
+                serverStatus.textContent = "Server is offline";
+            }
+        }
+
+        // Initial status update
+        updateServerStatus();
+    </script>
+</body>
+</html>
